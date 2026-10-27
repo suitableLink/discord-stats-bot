@@ -1,0 +1,17 @@
+[Unit]
+Description=Discord Activity Stats Bot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/discord-bots/stats
+EnvironmentFile=/etc/discord-bots/stats.env
+ExecStart=/opt/discord-bots/stats/.venv/bin/python -u /opt/discord-bots/stats/bot.py
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
