@@ -7,5 +7,5 @@ git checkout main
 git pull --ff-only origin main
 if [[ ! -x .venv/bin/python ]]; then python3 -m venv .venv; fi
 .venv/bin/python -m pip install -r requirements.txt
-sudo systemctl restart discord-stats
-sudo systemctl --no-pager status discord-stats
+sudo -n systemctl restart discord-stats
+sudo -n systemctl --no-pager status discord-stats
